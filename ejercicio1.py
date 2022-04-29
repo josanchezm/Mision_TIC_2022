@@ -74,3 +74,9 @@ var-1 = 120
 
 var1,var2,var3 = 1,2,3
 print(var1,var2,var3)
+
+largo = float(input("ingrese el largo: ")) 
+ancho = float(input("ingrese el ancho: "))
+unidad = input("ingrese la unidad de medida: ")
+area = largo * ancho 
+print("El area del rectangulo es: ", area, unidad)
