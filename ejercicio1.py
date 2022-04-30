@@ -194,39 +194,123 @@ print("/=\   /=\   /=\ ")
 print("[ ]   [ ]   [ ]")
 '''
 
-# Fahrenheit a Celcius
-
-'''
-Fahrenheit = 50 
-
-Celcius = (Fahrenheit-32)*(5/9) 
-
-print(Fahrenheit,"grados Fahrenheit equivalen a",Celcius,"grados celcius")
-'''
-
-# Celcius a Fahrenheit
-
-'''
-Celcius = 10
-
-Fahrenheit = (Celcius*(9/5))+32
-
-print(Celcius,"grados celcius equivalen a",Fahrenheit,"grados Fahrenheit")
-'''
-
 # Funciones en Python
 
-def gradosCaF(Fahrenheit):
-    Celcius = (Fahrenheit-32)*(5/9)
-    print(Fahrenheit,"grados Fahrenheit equivalen a",Celcius,"grados Celcius")
-gradosCaF(10)
 
-def gradosFaC(Celcius): 
+def gradosCaF():
+    Celcius = float(input("ingrese los grados celcius: "))
     Fahrenheit = (Celcius*(9/5))+32
     print(Celcius,"grados Celcius equivalen a",Fahrenheit,"grados Fahrenheit")
-gradosFaC(50)
+gradosCaF()
 
-ejercicio = 3%2/5-8*3*15+18/8*-5
-print(ejercicio)
 
+'''
+def gradosFaC(): 
+    Fahrenheit = float(input("ingrese los grados Fahrenheit: "))
+    Celcius = (Fahrenheit-32)*(5/9)
+    print(Fahrenheit,"grados Fahrenheit equivalen a",Celcius,"grados Celcius")
+gradosFaC()
+'''
+
+'''
+def usdACop():
+    usd = float(input("ingrese los dolares: ")) 
+    cop = usd * 3931.74
+    print(usd,"dolar(es) equivalen a",cop,"peso(s) colombianos")
+usdACop()
+'''
+
+'''
+def IMC():
+    peso = float(input("ingrese el peso: "))
+    altura = float(input("ingrese su altura: "))
+    imc = peso / (altura**2) 
+    print("el IMC es de:",imc,"kg/m^2")
+IMC()
+'''
+
+'''
+def censo(): 
+    nombre = input("ingrese su nombre: ")
+    cumpleannios = input("ingrese su fecha de nacimiento: ")
+    edad = input("ingrese su edad: ")
+    ocupacion = input("a que se dedica? ")
+    telefono_fijo = input("cual es su numero fijo? ")
+    nombre_calle = input("ingrese el nombre de su calle: ")
+    ciudad = input("cual es su ciudad? ")
+    habitantes_vivienda = input("cuantas personas viven en su casa? ")
+    estado_civil = input("cual es su estado civil? ")
+    print("los datos que ingreso al formulario son los siguientes: \n",nombre,"\n",cumpleannios,"\n",edad,"\n",ocupacion,"\n",telefono_fijo,"\n",nombre_calle,"\n",ciudad,"\n",habitantes_vivienda,"\n",estado_civil)
+censo()
+'''
+
+# concatenacion de strings en Python 
+
+'''
+def concatenacion():
+    uno = input("digite el primer numero: ")
+    dos = input("digite el otro numero: ")
+    suma = uno + dos 
+    print("la suma entre",uno,"y",dos,"es",suma)
+concatenacion()
+'''
+
+# Tipo de variables y variables de tipo dinamico
+
+'''
+def tipoVariable(): 
+    n1 = input("ingrese el numero: ")
+    print(type(n1))
+    n1 = float(n1)
+    print(type(n1))
+tipoVariable()
+'''
+
+# Operaciones aritmeticas 
+
+'''
+def suma():
+    uno = float(input("digite el primer numero: "))
+    dos = float(input("digite el otro numero: "))
+    suma = uno + dos 
+    print("la suma entre",uno,"y",dos,"es",suma)
+suma()
+'''
+
+'''
+def cuadrado():
+    numero = float(input("ingrese un numero para elevar al cuadrado: "))
+    cuadrado = numero**2
+    print("el cuadrado de",numero,"es",cuadrado)
+cuadrado()
+'''
+
+'''
+def potencia():
+    numero = float(input("ingrese el numero: "))
+    potencia = float(input("ingrese la potencia: "))
+    calculo = numero**potencia
+    print("el numero",numero,"elevado a la potencia",potencia,"es igual a",calculo)
+potencia()
+'''
+
+'''
+def operacionesAritmeticas():
+    numero_1 = float(input("ingrese el primer numero: "))
+    numero_2 = float(input("ingrese el segundo numero: "))
+
+    suma = numero_1 + numero_2 
+    resta = numero_1 - numero_2 
+    multiplicacion = numero_1 * numero_2
+    division = numero_1 / numero_2
+    potencia = numero_1 ** numero_2
+    division_entera = numero_1 // numero_2 
+    modulo = numero_1 % numero_2
+
+    print("el resultado de las operaciones entre",numero_1,"y",numero_2,"es: \n",
+    "suma:",suma,"\n","resta:",resta,"\n","mutiplicacion:",multiplicacion,"\n",
+    "division:",division,"\n","potencia:",potencia,"\n","division entera:",division_entera,"\n",
+    "modulo:",modulo)
+operacionesAritmeticas() 
+'''
 
