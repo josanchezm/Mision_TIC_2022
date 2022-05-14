@@ -439,6 +439,7 @@ from contextlib import nullcontext
 import math as m
 from mimetypes import init
 from operator import truediv
+from re import S
 
 '''
 def trigonometria():
@@ -860,6 +861,7 @@ notas(nota_1,nota_2,nota_3,nota_4,nota_5,nota_ingles,nota_coach)
 
 #Programa que calcula las notas del ciclo 1 pero con while y condicionales
 
+'''
 def notas():
     i = 1
     notas = 0
@@ -872,6 +874,7 @@ def notas():
         i += 1
     return print(f'su nota del ciclo es: {notas}')
 notas()
+'''
 
 #Reto 2 ahora si:
 
@@ -880,35 +883,41 @@ def cliente(d):
     respuesta = {}
     respuesta["nombre"] = d["nombre"]
     respuesta["edad"] = d["edad"]
-    if d["edad"]>18:
+    if d["edad"]>18 and d["primer_ingreso"] == True:
         respuesta["atraccion"] = "X-Treme"
         respuesta["apto"] = True
         respuesta["primer_ingreso"] = d["primer_ingreso"]
-    if d["edad"] > 18 and d["primer_ingreso"] == True: 
-        respuesta["total_boleta"] = 20000 * .95
-    elif d["edad"] > 18 and d["primer_ingreso"] == False: 
+        respuesta["total_boleta"] = 20000 * .95        
+    elif d["edad"]> 18 and d["primer_ingreso"] == False:
+        respuesta["atraccion"] = "X-Treme"
+        respuesta["apto"] = True
+        respuesta["primer_ingreso"] = d["primer_ingreso"] 
         respuesta["total_boleta"] = 20000 
-    if 15<=d["edad"]<=18:
+    elif 15<=d["edad"]<=18 and d["primer_ingreso"] == True:
         respuesta["atraccion"] = "Carros chocones"
         respuesta["apto"] = True
-        respuesta["primer_ingreso"] = d["primer_ingreso"]
-    if 15<=d["edad"]<=18 and d["primer_ingreso"] == True: 
+        respuesta["primer_ingreso"] = d["primer_ingreso"] 
         respuesta["total_boleta"] = 5000 * .93
-    elif 15<=d["edad"]<=18 and d["primer_ingreso"] == False: 
+    elif 15<=d["edad"]<=18 and d["primer_ingreso"] == False:
+        respuesta["atraccion"] = "Carros chocones"
+        respuesta["apto"] = True
+        respuesta["primer_ingreso"] = d["primer_ingreso"] 
         respuesta["total_boleta"] = 5000
-    if 7<=d["edad"]<15: 
+    elif 7<=d["edad"]<15 and d["primer_ingreso"] == True:
+        respuesta["atraccion"] = "Sillas voladoras"
+        respuesta["apto"] = True
+        respuesta["primer_ingreso"] = d["primer_ingreso"] 
+        respuesta["total_boleta"] = 10000 * .95
+    elif 7<=d["edad"]<15 and d["primer_ingreso"] == False:
         respuesta["atraccion"] = "Sillas voladoras"
         respuesta["apto"] = True
         respuesta["primer_ingreso"] = d["primer_ingreso"]
-    if 7<=d["edad"]<15 and d["primer_ingreso"] == True:
-        respuesta["total_boleta"] = 10000 * .95
-    elif 7<=d["edad"]<15 and d["primer_ingreso"] == False:
         respuesta["total_boleta"] = 10000
-    if d["edad"]<7: 
+    elif d["edad"]<7: 
         respuesta["atraccion"] = "N/A"
         respuesta["apto"] = False
         respuesta["primer_ingreso"] = d["primer_ingreso"]
-        respuesta["total_boleta"] = "N/A"
+        respuesta["total_boleta"] = "N/A"    
     return respuesta
 
 dic1={"id_cliente":1,"nombre":"Johana Fernandez","edad":20,"primer_ingreso":True}
@@ -928,6 +937,82 @@ print(cliente(dic6))
 print(cliente(dic7))
 '''
 
- 
+#Programa que hace la sumatoria de un contador de numeros 
 
+'''
+contador = int(input("ingrese cuantos numeros quiere contar: "))
+
+def contador_sumatoria(numero):
+    i = 1
+    sumatoria = 0
+    while i <= contador:
+        sumatoria += i
+        print(i)
+        i += 1
+    print(f'la sumatoria es: {sumatoria}')
+contador_sumatoria(contador)
+'''
+
+#Programa que hace la sumatoria y conteo entre dos numeros:
+
+'''
+numero_1 = int(input("ingrese el numero inicial: "))
+numero_2 = int(input("ingrese el numero final: "))
+
+def contador_sumatoria(inicio,final): 
+    sum=0
+    while inicio <= final: 
+        sum += inicio
+        print(inicio)
+        inicio += 1
+    return print(f'la sumatoria de los numeros entre el {numero_1} y el {numero_2} es: {sum}')
+contador_sumatoria(numero_1,numero_2)
+'''
+
+#Programa que hace la sumatoria de los n multiplos de un numero que indique el usuario 
+
+'''
+numero_usuario = int(input("ingrese el numero: "))
+multiplos_usuario = int(input(f'ingrese la cantidad de mutiplos de {numero_usuario}: '))
+
+def sumatoria_multiplos(numero, multiplos):
+    i = 1
+    sum = 0 
+    while i <= multiplos:
+        multiplos_numero = numero * i
+        sum += multiplos_numero
+        i += 1
+        print(multiplos_numero)
+    return print(f'para los primeros {multiplos} multiplos de {numero}, la sumatoria es: {sum}')
+sumatoria_multiplos(numero_usuario,multiplos_usuario)
+'''
+
+# Programa que calcula la nota del ciclo 1: 
+
+'''
+def calculo_Notas(): 
+    i=1
+    notas = 0 
+    while i <= 7:
+        if i<=2 or i>= 6:
+            notas += float(input(f"ingrese la {i} nota: "))*.1
+        else:
+            notas += float(input(f"ingrese la {i} nota: "))*.2
+        i += 1
+    return print(f'su promedio del ciclo 1 es: {notas}')
+calculo_Notas()
+''' 
+
+#Calculo de promedios
+
+def promedios():
+    numero = int(input("ingrese la cantidad de numeros a promediar: "))
+    i = 1
+    sum = 0 
+    while i <= numero: 
+        sum += float(input(f'ingrese el numero {i}: '))
+        i += 1
+    promedio = sum / numero
+    return print(f'el promedio es: {promedio}')
+promedios()
 
