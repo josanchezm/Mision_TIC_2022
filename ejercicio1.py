@@ -435,7 +435,9 @@ edades(15)
 
 # importacion de funciones trigonometricas y de una que pasa grados a radianes (ya que python calcula este tipo de funciones solo en radianes)
 
+from contextlib import nullcontext
 import math as m
+from mimetypes import init
 from operator import truediv
 
 '''
@@ -606,7 +608,7 @@ fecha_nacimiento = input("ingrese su fecha de nacimiento (formato de ejemplo: 8 
 edadFormato(fecha_nacimiento)
 '''
 
-
+'''
 saludo = "assdaasd"
 print(saludo)
 
@@ -614,4 +616,318 @@ a=5
 b=2
 c=a+b
 print(c)
+'''
+
+'''
+def CDT(usuario,capital,tiempo):
+    porcentaje_interes = .03
+    porcentaje_a_perder = .02
+
+    if tiempo > 2:
+        valor_intereses = (capital*porcentaje_interes*tiempo)/12
+        valor_total = valor_intereses + capital  
+    else:
+        valor_a_perder = capital*porcentaje_a_perder
+        valor_total = capital-valor_a_perder
+    return print(f'Para el usuario {usuario} La cantidad de dinero a recibir, según el monto inicial {capital} para un tiempo de {tiempo} meses es: {valor_total}')
+CDT("ER3366",650000,2)
+'''
+
+'''
+print("inicio")
+def saludo():
+    print("hola mundo")
+
+saludo()
+'''
+
+# Diccionarios: 
+
+# permite relacionar una entidad (llave) con un valor, puede ser de mismo tipo o diferente las llaves y sus valores
+
+'''
+diccionario_vacio = {}
+sensores = {"living room": 21,"kitchen": 23,"bedroom":20}
+'''
+
+# agregar elementos a un diccionario
+
+'''
+sensores["bathroom"] = 18
+print(sensores)
+'''
+
+# ver el tipo de un elemento en python
+
+'''
+dic1 = {}
+print(type(dic1))
+print(dic1)
+dic1["numero"] = 23
+print(dic1)
+
+dic2 = {"id":1, "nombre":"Carlos", "edad":49, "primerizo":True}
+print(dic2)
+dic2["color"] = "rojo"
+print(dic2)
+
+dic3 = {1:"perro"}
+print(dic3)
+dic3[2] = "gato"
+print(dic3)
+'''
+
+# Reescribir el valor asociado a una llave (nombre)
+
+dic1 = {"Id_cliente": 1, "nombre": "Johana Fernandez", "edad": 20, "primer_ingreso": True}
+
+'''
+dic1["nombre"] = "Valentina"
+'''
+
+# Reto 2
+
+'''
+def cliente(informacion):
+    respuesta = {}
+    respuesta["nombre"] = informacion["nombre"]
+    respuesta["edad"] = informacion["edad"]
+    if informacion["edad"]>18:
+        respuesta["atraccion"] = "X-Treme"
+        respuesta["apto"] = True 
+    respuesta["primer_ingreso"] = informacion["primer_ingreso"]
+    return respuesta
+
+print(cliente(dic1))
+'''
+
+# Mas ciclos while 
+
+'''
+amiguis = 3
+
+while amiguis <= 30:
+    print(amiguis)
+    amiguis += 3
+print("se acabo el ciclo")
+'''
+
+'''
+numero = 0
+saludo = ["hola","buenos","dias"]
+
+while numero <= 2:
+    print(saludo[numero])
+    numero += 1
+print("se acabo el otro ciclo")
+'''
+
+# Programa que muestra la tabla de multiplicar que se pida\
+
+'''
+tabla = int(input("que tabla desea ver? ")) 
+
+tabla_inicio = tabla
+tabla_final = tabla*10
+i = 1
+
+while tabla <= tabla_final:
+    print(f'{tabla_inicio}x{i} = {tabla}')
+    tabla += tabla_inicio
+    i += 1
+print(f'se termino la tabla del {tabla_inicio}')
+'''
+
+#While con sumatorias y conteos
+
+'''
+i = 1 
+sumatoria = 0
+while i <= 5:
+    print(i)
+    sumatoria += i
+    i+=1
+print("se acabo")
+print(f'la sumatoria es: {sumatoria}')
+'''
+
+# Programa que imprime los numeros pares y su sumatoria
+
+'''
+i = 0
+sumatoria = 0 
+
+while i <= 100:
+    par = 2*i
+    i += 1
+    sumatoria += par
+    print(par)
+print(f'la sumatoria de los numeros pares del 0 al {i-1} es: {sumatoria}')
+'''
+
+# Programa que imprime los numeros impares y su sumatoria 
+
+'''
+i = 0
+sumatoria = 0 
+
+while i < 100:
+    impar = (2*i)+1
+    i += 1
+    sumatoria += impar
+    print(impar)
+print(f'la sumatoria de los numeros impares entre el 0 y el {i} es: {sumatoria}')
+'''
+
+#La sumatoria de los multiplos de 7
+
+'''
+def sumatoria_7(numero, multiplos):
+    i = 1
+    sumatoria = 0 
+
+    while i <= multiplos:
+        multiplos_numero = i*numero
+        sumatoria += multiplos_numero
+        i += 1
+        print(multiplos_numero)
+    print(f'La sumatoria de los primeros {multiplos} multiplos de {numero} es: {sumatoria}')
+
+
+numero_usuario = int(input("digite el numero al cual desea obtener sus multiplos: "))
+multiplos_usuario = int(input("digite la cantidad de multiplos a los que les desea hacer sumatoria: "))
+sumatoria_7(numero_usuario,multiplos_usuario)
+'''
+
+# La sumatoria de la n cantidad de numeros que indique el usuario
+
+'''
+def sumatoria_usuario(inicio,n):
+    numero_inicial = inicio
+    numero_final = n 
+    sumatoria = 0 
+    while inicio <= n:
+        sumatoria += inicio
+        inicio += 1
+        print(sumatoria)
+    print(f'la sumatoria de los numeros del {numero_inicial} al {numero_final} es: {sumatoria}')
+
+numero_inicio = int(input("ingrese el numero de inicio: "))
+numero_final = int(input("ingrese el numero de cierre: "))
+sumatoria_usuario(numero_inicio,numero_final)
+'''
+
+# La sumatoria de la n cantidad de numeros que indique el usuario, pero ahora con los int dentro del ciclo: 
+
+'''
+numero_usuario = int(input("indique cuantos numeros desea sumar: "))
+
+
+def sumatoria_numeros(numero): 
+    i = 1
+    sum = 0 
+    while i <= numero: 
+        sum += int(input("ingrese el numero: "))
+        i += 1
+    return print(f'la sumatoria es: {sum}')
+sumatoria_numeros(numero_usuario)
+'''
+
+#Programa que calcula las notas del ciclo 1
+
+'''
+def notas(r1,r2,r3,r4,r5,ingles,coach):
+    nota_r1 = r1 * .1
+    nota_r2 = r2 * .1
+    nota_r3 = r3 * .2
+    nota_r4 = r4 * .2
+    nota_r5 = r5 * .2
+    nota_ingles = ingles * .1
+    nota_coach = coach * .1
+    nota_ciclo = nota_r1+nota_r2+nota_r3+nota_r4+nota_r5+nota_ingles+nota_coach
+
+    return print(f'su nota del ciclo 1 es: {nota_ciclo}')
+
+nota_1 = float(input("ingrese la nota del reto 1: "))
+nota_2 = float(input("ingrese la nota del reto 2: "))
+nota_3 = float(input("ingrese la nota del reto 3: "))
+nota_4 = float(input("ingrese la nota del reto 4: "))
+nota_5 = float(input("ingrese la nota del reto 5: "))
+nota_ingles = float(input("ingrese la nota de ingles: "))
+nota_coach = float(input("ingrese la nota de coach: "))
+notas(nota_1,nota_2,nota_3,nota_4,nota_5,nota_ingles,nota_coach)
+'''
+
+#Programa que calcula las notas del ciclo 1 pero con while y condicionales
+
+def notas():
+    i = 1
+    notas = 0
+
+    while i <= 7:
+        if i<=2 or i>= 6:
+            notas += float(input(f"ingrese la {i} nota: "))*.1
+        else:
+            notas += float(input(f"ingrese la {i} nota: "))*.2
+        i += 1
+    return print(f'su nota del ciclo es: {notas}')
+notas()
+
+#Reto 2 ahora si:
+
+'''
+def cliente(d): 
+    respuesta = {}
+    respuesta["nombre"] = d["nombre"]
+    respuesta["edad"] = d["edad"]
+    if d["edad"]>18:
+        respuesta["atraccion"] = "X-Treme"
+        respuesta["apto"] = True
+        respuesta["primer_ingreso"] = d["primer_ingreso"]
+    if d["edad"] > 18 and d["primer_ingreso"] == True: 
+        respuesta["total_boleta"] = 20000 * .95
+    elif d["edad"] > 18 and d["primer_ingreso"] == False: 
+        respuesta["total_boleta"] = 20000 
+    if 15<=d["edad"]<=18:
+        respuesta["atraccion"] = "Carros chocones"
+        respuesta["apto"] = True
+        respuesta["primer_ingreso"] = d["primer_ingreso"]
+    if 15<=d["edad"]<=18 and d["primer_ingreso"] == True: 
+        respuesta["total_boleta"] = 5000 * .93
+    elif 15<=d["edad"]<=18 and d["primer_ingreso"] == False: 
+        respuesta["total_boleta"] = 5000
+    if 7<=d["edad"]<15: 
+        respuesta["atraccion"] = "Sillas voladoras"
+        respuesta["apto"] = True
+        respuesta["primer_ingreso"] = d["primer_ingreso"]
+    if 7<=d["edad"]<15 and d["primer_ingreso"] == True:
+        respuesta["total_boleta"] = 10000 * .95
+    elif 7<=d["edad"]<15 and d["primer_ingreso"] == False:
+        respuesta["total_boleta"] = 10000
+    if d["edad"]<7: 
+        respuesta["atraccion"] = "N/A"
+        respuesta["apto"] = False
+        respuesta["primer_ingreso"] = d["primer_ingreso"]
+        respuesta["total_boleta"] = "N/A"
+    return respuesta
+
+dic1={"id_cliente":1,"nombre":"Johana Fernandez","edad":20,"primer_ingreso":True}
+dic2={"id_cliente":1,"nombre":"Johana Fernandez","edad":20,"primer_ingreso":False}
+dic3={"id_cliente":2,"nombre":"Gloria Suarez","edad":3,"primer_ingreso":True}
+dic4={"id_cliente":3,"nombre":"Tatiana Suarez","edad":17,"primer_ingreso":True}
+dic5={"id_cliente":3,"nombre":"Tatiana Suarez","edad":17,"primer_ingreso":False}
+dic6={"id_cliente":4,"nombre":"Tatiana Ruiz","edad":8,"primer_ingreso":True}
+dic7={"id_cliente":4,"nombre":"Tatiana Ruiz","edad":8,"primer_ingreso":False}
+
+print(cliente(dic1))
+print(cliente(dic2))
+print(cliente(dic3))
+print(cliente(dic4))
+print(cliente(dic5))
+print(cliente(dic6))
+print(cliente(dic7))
+'''
+
+ 
+
 
