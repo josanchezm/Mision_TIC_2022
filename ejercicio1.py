@@ -878,7 +878,6 @@ notas()
 
 #Reto 2 ahora si:
 
-'''
 def cliente(d): 
     respuesta = {}
     respuesta["nombre"] = d["nombre"]
@@ -928,14 +927,8 @@ dic5={"id_cliente":3,"nombre":"Tatiana Suarez","edad":17,"primer_ingreso":False}
 dic6={"id_cliente":4,"nombre":"Tatiana Ruiz","edad":8,"primer_ingreso":True}
 dic7={"id_cliente":4,"nombre":"Tatiana Ruiz","edad":8,"primer_ingreso":False}
 
-print(cliente(dic1))
-print(cliente(dic2))
-print(cliente(dic3))
-print(cliente(dic4))
-print(cliente(dic5))
-print(cliente(dic6))
-print(cliente(dic7))
-'''
+cliente(dic1)
+cliente(dic2)
 
 #Programa que hace la sumatoria de un contador de numeros 
 
@@ -1005,6 +998,7 @@ calculo_Notas()
 
 #Calculo de promedios
 
+'''
 def promedios():
     numero = int(input("ingrese la cantidad de numeros a promediar: "))
     i = 1
@@ -1015,4 +1009,5 @@ def promedios():
     promedio = sum / numero
     return print(f'el promedio es: {promedio}')
 promedios()
+'''
 
