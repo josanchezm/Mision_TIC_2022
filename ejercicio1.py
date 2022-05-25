@@ -435,11 +435,13 @@ edades(15)
 
 # importacion de funciones trigonometricas y de una que pasa grados a radianes (ya que python calcula este tipo de funciones solo en radianes)
 
+from bdb import GENERATOR_AND_COROUTINE_FLAGS
 from contextlib import nullcontext
 import math as m
 from mimetypes import init
 from operator import truediv
 from re import S
+from xmlrpc.client import TRANSPORT_ERROR
 
 '''
 def trigonometria():
@@ -523,8 +525,8 @@ def numerosEnteros(numero):
     if numero.isdigit():
         print("el numero es un entero positivo")
     elif numero[0] == "-":
-        print("el numero es un entero negativo")    
-    else: 
+        print("el numero es un entero negativo")
+    else:
         print("el valor ingresado no es un entero")
 
 valor_usuario = input("ingrese un numero entero: ")
@@ -540,17 +542,17 @@ def adivinar(numero):
         print("el numero generado al azar fue:",al_azar)
         if numero == al_azar:
             return True
-        else: 
+        else:
             return False
-    else: 
+    else:
         print("el numero ingresado no esta entre 1 y 10")
-        return False 
+        return False
 
 valor = int(input("ingrese un numero entre 1 y 10: "))
 
-if adivinar(valor): 
+if adivinar(valor):
     print("ganaste")
-else: 
+else:
     print("perdiste")
 '''
 
@@ -562,17 +564,17 @@ else:
 def mundoJugador(edad,experiencia,nivel):
     if 12<=edad<=20 and experiencia == "no" and nivel == 0:
         return 1
-    elif 12<=edad<=20 and experiencia == "si" and nivel<50: 
+    elif 12<=edad<=20 and experiencia == "si" and nivel<50:
         return 2
-    elif 12<=edad<=20 and experiencia == "si" and 50<=nivel<=100: 
+    elif 12<=edad<=20 and experiencia == "si" and 50<=nivel<=100:
         return 3
     elif edad>20 and experiencia == "no" and nivel == 0:
         return 4
-    elif edad>20 and experiencia == "si" and nivel<50: 
+    elif edad>20 and experiencia == "si" and nivel<50:
         return 5
     elif edad>20 and experiencia == "si" and 50<=nivel<=100:
         return 6
-    else: 
+    else:
         print("has ingresado datos incorrectos, vuelve a intentarlo")
         return "ninguno"
 
@@ -613,7 +615,7 @@ edadFormato(fecha_nacimiento)
 saludo = "assdaasd"
 print(saludo)
 
-a=5 
+a=5
 b=2
 c=a+b
 print(c)
@@ -626,7 +628,7 @@ def CDT(usuario,capital,tiempo):
 
     if tiempo > 2:
         valor_intereses = (capital*porcentaje_interes*tiempo)/12
-        valor_total = valor_intereses + capital  
+        valor_total = valor_intereses + capital
     else:
         valor_a_perder = capital*porcentaje_a_perder
         valor_total = capital-valor_a_perder
@@ -642,7 +644,7 @@ def saludo():
 saludo()
 '''
 
-# Diccionarios: 
+# Diccionarios:
 
 # permite relacionar una entidad (llave) con un valor, puede ser de mismo tipo o diferente las llaves y sus valores
 
@@ -695,14 +697,14 @@ def cliente(informacion):
     respuesta["edad"] = informacion["edad"]
     if informacion["edad"]>18:
         respuesta["atraccion"] = "X-Treme"
-        respuesta["apto"] = True 
+        respuesta["apto"] = True
     respuesta["primer_ingreso"] = informacion["primer_ingreso"]
     return respuesta
 
 print(cliente(dic1))
 '''
 
-# Mas ciclos while 
+# Mas ciclos while
 
 '''
 amiguis = 3
@@ -726,7 +728,7 @@ print("se acabo el otro ciclo")
 # Programa que muestra la tabla de multiplicar que se pida\
 
 '''
-tabla = int(input("que tabla desea ver? ")) 
+tabla = int(input("que tabla desea ver? "))
 
 tabla_inicio = tabla
 tabla_final = tabla*10
@@ -742,7 +744,7 @@ print(f'se termino la tabla del {tabla_inicio}')
 #While con sumatorias y conteos
 
 '''
-i = 1 
+i = 1
 sumatoria = 0
 while i <= 5:
     print(i)
@@ -756,7 +758,7 @@ print(f'la sumatoria es: {sumatoria}')
 
 '''
 i = 0
-sumatoria = 0 
+sumatoria = 0
 
 while i <= 100:
     par = 2*i
@@ -766,11 +768,11 @@ while i <= 100:
 print(f'la sumatoria de los numeros pares del 0 al {i-1} es: {sumatoria}')
 '''
 
-# Programa que imprime los numeros impares y su sumatoria 
+# Programa que imprime los numeros impares y su sumatoria
 
 '''
 i = 0
-sumatoria = 0 
+sumatoria = 0
 
 while i < 100:
     impar = (2*i)+1
@@ -785,7 +787,7 @@ print(f'la sumatoria de los numeros impares entre el 0 y el {i} es: {sumatoria}'
 '''
 def sumatoria_7(numero, multiplos):
     i = 1
-    sumatoria = 0 
+    sumatoria = 0
 
     while i <= multiplos:
         multiplos_numero = i*numero
@@ -805,8 +807,8 @@ sumatoria_7(numero_usuario,multiplos_usuario)
 '''
 def sumatoria_usuario(inicio,n):
     numero_inicial = inicio
-    numero_final = n 
-    sumatoria = 0 
+    numero_final = n
+    sumatoria = 0
     while inicio <= n:
         sumatoria += inicio
         inicio += 1
@@ -818,16 +820,16 @@ numero_final = int(input("ingrese el numero de cierre: "))
 sumatoria_usuario(numero_inicio,numero_final)
 '''
 
-# La sumatoria de la n cantidad de numeros que indique el usuario, pero ahora con los int dentro del ciclo: 
+# La sumatoria de la n cantidad de numeros que indique el usuario, pero ahora con los int dentro del ciclo:
 
 '''
 numero_usuario = int(input("indique cuantos numeros desea sumar: "))
 
 
-def sumatoria_numeros(numero): 
+def sumatoria_numeros(numero):
     i = 1
-    sum = 0 
-    while i <= numero: 
+    sum = 0
+    while i <= numero:
         sum += int(input("ingrese el numero: "))
         i += 1
     return print(f'la sumatoria es: {sum}')
@@ -878,7 +880,8 @@ notas()
 
 #Reto 2 ahora si:
 
-def cliente(d): 
+'''
+def cliente(d):
     respuesta = {}
     respuesta["nombre"] = d["nombre"]
     respuesta["edad"] = d["edad"]
@@ -886,37 +889,37 @@ def cliente(d):
         respuesta["atraccion"] = "X-Treme"
         respuesta["apto"] = True
         respuesta["primer_ingreso"] = d["primer_ingreso"]
-        respuesta["total_boleta"] = 20000 * .95        
+        respuesta["total_boleta"] = 20000 * .95
     elif d["edad"]> 18 and d["primer_ingreso"] == False:
         respuesta["atraccion"] = "X-Treme"
         respuesta["apto"] = True
-        respuesta["primer_ingreso"] = d["primer_ingreso"] 
-        respuesta["total_boleta"] = 20000 
+        respuesta["primer_ingreso"] = d["primer_ingreso"]
+        respuesta["total_boleta"] = 20000
     elif 15<=d["edad"]<=18 and d["primer_ingreso"] == True:
         respuesta["atraccion"] = "Carros chocones"
         respuesta["apto"] = True
-        respuesta["primer_ingreso"] = d["primer_ingreso"] 
+        respuesta["primer_ingreso"] = d["primer_ingreso"]
         respuesta["total_boleta"] = 5000 * .93
     elif 15<=d["edad"]<=18 and d["primer_ingreso"] == False:
         respuesta["atraccion"] = "Carros chocones"
         respuesta["apto"] = True
-        respuesta["primer_ingreso"] = d["primer_ingreso"] 
+        respuesta["primer_ingreso"] = d["primer_ingreso"]
         respuesta["total_boleta"] = 5000
     elif 7<=d["edad"]<15 and d["primer_ingreso"] == True:
         respuesta["atraccion"] = "Sillas voladoras"
         respuesta["apto"] = True
-        respuesta["primer_ingreso"] = d["primer_ingreso"] 
+        respuesta["primer_ingreso"] = d["primer_ingreso"]
         respuesta["total_boleta"] = 10000 * .95
     elif 7<=d["edad"]<15 and d["primer_ingreso"] == False:
         respuesta["atraccion"] = "Sillas voladoras"
         respuesta["apto"] = True
         respuesta["primer_ingreso"] = d["primer_ingreso"]
         respuesta["total_boleta"] = 10000
-    elif d["edad"]<7: 
+    elif d["edad"]<7:
         respuesta["atraccion"] = "N/A"
         respuesta["apto"] = False
         respuesta["primer_ingreso"] = d["primer_ingreso"]
-        respuesta["total_boleta"] = "N/A"    
+        respuesta["total_boleta"] = "N/A"
     return respuesta
 
 dic1={"id_cliente":1,"nombre":"Johana Fernandez","edad":20,"primer_ingreso":True}
@@ -929,8 +932,9 @@ dic7={"id_cliente":4,"nombre":"Tatiana Ruiz","edad":8,"primer_ingreso":False}
 
 cliente(dic1)
 cliente(dic2)
+'''
 
-#Programa que hace la sumatoria de un contador de numeros 
+#Programa que hace la sumatoria de un contador de numeros
 
 '''
 contador = int(input("ingrese cuantos numeros quiere contar: "))
@@ -952,9 +956,9 @@ contador_sumatoria(contador)
 numero_1 = int(input("ingrese el numero inicial: "))
 numero_2 = int(input("ingrese el numero final: "))
 
-def contador_sumatoria(inicio,final): 
+def contador_sumatoria(inicio,final):
     sum=0
-    while inicio <= final: 
+    while inicio <= final:
         sum += inicio
         print(inicio)
         inicio += 1
@@ -962,7 +966,7 @@ def contador_sumatoria(inicio,final):
 contador_sumatoria(numero_1,numero_2)
 '''
 
-#Programa que hace la sumatoria de los n multiplos de un numero que indique el usuario 
+#Programa que hace la sumatoria de los n multiplos de un numero que indique el usuario
 
 '''
 numero_usuario = int(input("ingrese el numero: "))
@@ -970,7 +974,7 @@ multiplos_usuario = int(input(f'ingrese la cantidad de mutiplos de {numero_usuar
 
 def sumatoria_multiplos(numero, multiplos):
     i = 1
-    sum = 0 
+    sum = 0
     while i <= multiplos:
         multiplos_numero = numero * i
         sum += multiplos_numero
@@ -980,12 +984,12 @@ def sumatoria_multiplos(numero, multiplos):
 sumatoria_multiplos(numero_usuario,multiplos_usuario)
 '''
 
-# Programa que calcula la nota del ciclo 1: 
+# Programa que calcula la nota del ciclo 1:
 
 '''
-def calculo_Notas(): 
+def calculo_Notas():
     i=1
-    notas = 0 
+    notas = 0
     while i <= 7:
         if i<=2 or i>= 6:
             notas += float(input(f"ingrese la {i} nota: "))*.1
@@ -994,7 +998,7 @@ def calculo_Notas():
         i += 1
     return print(f'su promedio del ciclo 1 es: {notas}')
 calculo_Notas()
-''' 
+'''
 
 #Calculo de promedios
 
@@ -1002,12 +1006,547 @@ calculo_Notas()
 def promedios():
     numero = int(input("ingrese la cantidad de numeros a promediar: "))
     i = 1
-    sum = 0 
-    while i <= numero: 
+    sum = 0
+    while i <= numero:
         sum += float(input(f'ingrese el numero {i}: '))
         i += 1
     promedio = sum / numero
     return print(f'el promedio es: {promedio}')
 promedios()
 '''
+
+# Listas
+# Son mutables y ordenadas
+
+'''
+lista = [1, 2, 3, 3, 8.8, "Hola", ["xd", 1], True, False]
+'''
+
+# guardar cada elemento de una tupla en una variable
+
+'''
+x,y,r,z = [2,3.4,"y",152]
+print(x,y,r,z)
+'''
+
+# Acceder a elementos en una lista y operarlos:
+
+'''
+print(lista)
+print(type(lista))
+print(lista[0])
+print(f'La suma de {lista[0]} y {lista[3]} es: {lista[0]+lista[3]} ')
+print(lista[5])
+print(lista[5][1])
+print(f"la contatenacion entre {lista[6][0]} y {lista[6][1]} es: {lista[6][0]+str(lista[6][1])}")
+'''
+
+# reasignar valores en los elementos de la lista
+
+'''
+lista[4] = 99.9
+print(lista[4])
+'''
+
+# Metodos aplicados a listas
+
+# ver el index de un elemento de la lista
+
+'''
+print(lista.index("Hola"))
+
+'''
+# ver el conteo de un elemento de la lista
+
+'''
+print(f'el conteo de {lista[2]} en la lista es: {lista.count(3)} veces')
+'''
+
+# agregar elementos al final de la lista
+
+'''
+lista.append("Nuevo elemento")
+print(lista)
+'''
+
+# eliminar el ultimo elemento de la lista
+
+'''
+lista.pop()
+print(lista)
+'''
+# eliminar el valor en el index indicado
+
+'''
+lista.pop(0)
+print(lista)
+'''
+# eliminar el valor especificado de la lista, si el valor se encuentra mas de una vez, elimina el primero
+
+'''
+lista.remove(3)
+print(lista)
+'''
+
+# copiar una lista en una variable
+
+'''
+l2 = lista.copy()
+print(lista)
+print(l2)
+'''
+
+# limpiar una lista
+
+'''
+l2.clear()
+print(f'la lista l2 esta vacia: {l2}')
+'''
+
+# agregar los elementos de una lista al final de otra lista
+
+'''
+l3 = ["texto",1,3.2]
+lista.extend(l3)
+print(l3)
+print(lista)
+'''
+
+# agregar un valor en el index indicado, el valor que se encontraba en ese index pasa al siguiente
+
+'''
+lista.insert(4,"valor agregado")
+print(lista)
+'''
+
+# voltear el orden de la lista
+
+'''
+print(lista)
+lista.reverse()
+print(lista)
+'''
+
+# ordenar la lista de menor a mayor (solo para listas de un solo tipo)
+
+'''
+numeros = [7,6, 10, 11, 1, 0.9, 2]
+numeros.sort()
+print(numeros)
+
+palabras = ["Sofia","Alejandra","Karen","Jaime","Barbara"]
+palabras.sort()
+print(palabras)
+'''
+
+# ordernar la lista de mayor a menor (solo para listas de un solo tipo)
+
+'''
+numeros.sort(reverse = True)
+print(numeros)
+
+numeros.sort()
+numeros.reverse()
+print(numeros)
+
+palabras.sort(reverse = True)
+print(palabras)
+
+palabras.sort()
+palabras.reverse()
+print(palabras)
+'''
+
+# los ciclos pueden recorrer listas
+
+'''
+nombres = ["Sofia","Alejandra","Karen","Jaime","Barbara","Elizabeth"]
+
+i = 1
+for nombre in nombres:
+    print(f'{i} nombre: {nombre}')
+    i += 1
+'''
+
+# cortar listas en pedazos, guarda en la nueva variable la lista seccionada desde la posicion incial indicada hasta el index anterior a la posicion final indicada
+
+'''
+l1 = [3,5,7,2,9,8.8,10,"asd"]
+p1 = l1[:3]
+p2 = l1[3:]
+p3 = l1[1:5]
+print(l1)
+print(p1)
+print(p2)
+print(p3)
+'''
+
+# convertir tuplas en listas
+
+'''
+tupla = (1,3.3,"texto",9,"texto")
+lista = list(tupla)
+print(lista)
+'''
+
+# Tuplas
+# Son inmutables y ordenadas
+
+'''
+tupla = (3,5,"hola",4.7,8,3)
+'''
+
+'''
+print(tupla)
+print(tupla[:3])
+print(tupla[0:])
+print(tupla[0:2])
+print(tupla[:])
+'''
+
+# guardar cada elemento de una tupla en una variable
+
+'''
+x,y,r,z = (5,8,0,"asd")
+print(x,y,r,z)
+'''
+
+# Metodos de tuplas
+
+# hacer conteo de un valor en la tupla
+
+'''
+print(f'el 3 sale {tupla.count(3)} veces en la tupla')
+'''
+
+# saber el index de un valor en la tupla, si el valor se repite, mostrara el index del primer valor que coincida
+
+'''
+print(f'el index de texto en la lista es: {tupla.index("texto")}')
+'''
+
+# convertir una lista en tupla
+
+'''
+lista = [2,4,"texto",99.9]
+tupla = tuple(lista)
+print(tupla)
+'''
+
+# Conjuntos
+# son desorganizados (no tienen index, los elementos se agregan en orden aleatorio)
+
+'''
+conjunto = {5,2,3.6,"triqui"}
+print(type(conjunto))
+print(conjunto)
+'''
+
+# longitud de un conjunto
+
+'''
+print(len(conjunto))
+'''
+
+# ciclos en un conjunto
+
+'''
+for elemento in conjunto:
+    print(elemento)
+'''
+
+# verificar con booleanos si un elemento existe en el conjunto
+
+'''
+print("triqui" in conjunto)
+'''
+
+# agregar elementos a un conjunto
+
+'''
+conjunto.add("naranja")
+print(conjunto)
+'''
+
+# agregar los elementos de un conjunto a otro, los conjuntos no repiten elementos, solo muestran valores unicos
+
+'''
+frutas = {"pina","papaya","mango"}
+otras_frutas = {"fresa","pera","manzana"}
+frutas.update(otras_frutas)
+print(frutas)
+'''
+
+# es posible agregar los valores de cualquier tipo de coleccion
+
+'''
+animales = {"lobo","gallina","pez"}
+mas_animales = ("cerdo","puma")
+animales.update(mas_animales)
+print(animales)
+'''
+
+# Eliminar elementos de los conjuntos
+
+'''
+animales.remove("cerdo")
+print(animales)
+
+animales.discard("gallina")
+print(animales)
+'''
+
+# la diferencia es que remove saca error si se intenta sacar un elemento que no existe
+
+# sacar un elemento al azar del conjunto
+
+'''
+marcas_autos = {"mazda","alfa romeo","toyota","bmw"}
+print(marcas_autos)
+marcas_autos.pop()
+print(marcas_autos)
+'''
+
+# es posible guardar el elemento extraido en una variable
+
+'''
+carro = marcas_autos.pop()
+print(carro)
+'''
+
+# vaciar un conjunto
+
+'''
+marcas_autos.clear()
+print(marcas_autos)
+'''
+
+# eliminar un conjunto
+
+'''
+print(marcas_autos)
+del marcas_autos
+print(marcas_autos)
+'''
+
+# las operaciones matematicas entre conjuntos funcionan 
+
+# union
+
+'''
+conjunto1 = {2,10.3,4}
+conjunto2 = {"hola","asd","conjunto",4,2}
+
+conjunto3 = conjunto1.union(conjunto2)
+print(conjunto3)
+'''
+
+# los valores repetidos en los conjuntos seran unicos en la union de estos
+
+# interseccion
+
+'''
+conjunto3 = conjunto1.intersection(conjunto2)
+print(conjunto3)
+'''
+
+# diferencia (los valores que existen en el conjunto indicado y que no existen en los demas)
+
+'''
+print(conjunto1.difference(conjunto2))
+'''
+
+# diferencia simetica (guarda los valores unicos entre ambos conjuntos)
+
+'''
+conjunto3 = conjunto1.symmetric_difference(conjunto2)
+print(conjunto3)
+'''
+
+# el .copy tambien funciona en conjuntos
+
+'''
+conjunto3 = conjunto1.copy()
+print(conjunto3)
+'''
+
+# Lambda
+
+# Programacion funcional que nos sirve para realizar calculos de una manera mas rapido
+
+'''
+x = lambda a: a+10
+print(x(5))
+
+y = lambda a: 100 - a
+print(y(9))
+
+z = lambda a: 3**a+a
+print(z(2))
+'''
+
+# Numpy
+# Es una libreria de python para trabajar con arraysfd
+
+'''
+import numpy as np
+
+arr = np.array([1,3,"asd",4])
+print(arr)
+print(type(arr))
+'''
+
+# arrays de varias dimensiones
+
+'''
+arr2d = np.array([1,6.2,"arr",[1.2,2,"2d"]])
+print(type(arr2d))
+print(arr2d)
+print(arr2d[1])
+print(arr2d[3][0]+arr2d[3][1])
+'''
+
+# Juego de triqui
+
+# Para el desarrollo de este juego usaremos colecciones
+
+# Pasos para su creacion
+
+# 1. crear una funcion que dibuje el tablero
+# 2. realizar una jugada
+# 3. verificar si hay ganador 
+# 4. jugar
+
+# dibujar el tablero
+
+# 1|2|3
+# 4|5|6
+# 7|8|9
+
+# El jugador X o O puede ganar haciendo una linea con las casillas junto con sus reversos:
+
+# 1,2,3
+# 1,4,7
+# 3,6,9
+# 2,5,8
+# 1,5,9
+# 3,5,7
+
+# El tablero se puede representar como una cadena de caracteres
+
+'''
+tablero = "|1|2|3|4|5|6|7|8|9|"
+'''
+
+# Si un jugador marca una casilla, esta cambia su valor por X o O 
+
+# Como los strings son indexados, esto significa que podemos partir la cadena para asi obtener cada una de las 3 filas por separado 
+
+# index de las casillas:
+# de 0 a 2 (123)
+# de 3 a 5 (456)
+# de 6 a 8 (789)
+
+# una vez tengamos las subcadenas, separaremos estas lineas de codigo independientes haciendo uso de \n
+
+'''
+fila1 = tablero[:7]
+fila2 = tablero[6:13]
+fila3 = tablero[12:]
+tablero_lleno = f"{fila1}\n{fila2}\n{fila3}"
+print(tablero_lleno)
+'''
+
+# Lo que necesitamos para que jueguen es una funcion que reciba como argumento la posicion que el jugador quiere marcar y reemplace el valor de la casilla en cuestion por ese valor recibido en el argumento
+
+# Lo que quiere decir que cuando el programa identifique  que alguna de las lineas para ganar indicadas arriba han cambiado todos los valores de sus casillas por X o O, hay ganador
+
+# El metodo .format es capaz de buscar llaves en strings para en su interior ubicar valores
+
+'''
+def renderizar_tablero(tablero):
+    plantilla = "| {} | | {} | {} |"
+    salto = "\n"
+    bar = "---------------"
+    a=plantilla.format(*tablero[:3])
+    b=plantilla.format(*tablero[3:6])
+    c=plantilla.format(*tablero[6:])
+
+    t=salto.join([bar,a,bar,b,bar,c,bar])
+    return print(t)
+renderizar_tablero("123456789")
+'''
+
+# Haremos una funcion que debe validar que el valor recibido por los usuarios esta entre 1 y 9, reasignar el valor a de la casilla indicada con X o O, asi como validar si la casilla ya habia sido marcada
+
+'''
+def actualizar_movimiento(juego,jugada,jugador): 
+    if not (jugada.isdigit() and int(jugada) in range(1,10)): 
+        print(f'Jugada invalida "{jugada}", solo son validos numeros entre 1 y 9')
+        return juego
+    numero_jugada = int(jugada)
+    if juego[numero_jugada - 1] in 'XO':
+        print(f'La casilla "{jugada}" ya esta ocupada')
+        return juego
+    juego = juego[:numero_jugada-1]+jugador+juego[numero_jugada:]
+    return print(juego)
+actualizar_movimiento("123456789","7","X")
+
+def encontrar_ganador(juego):
+    ganadores = ((0,1,2), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6))
+
+    for jugador in ('X', 'O'):
+        for i, j, k in  ganadores:
+            linea = (juego[i], juego[j], juego[k])
+            if linea == (jugador,jugador,jugador):
+                return jugador
+    return None
+'''
+
+# reto 3
+
+l1=[(2001,'rosca', 'PT29872',2,45,'Luis Molero',3456,'12/06/2020'),
+ (2010,'bujía', 'MS9512',4,15,'Carlos Rondon',1256,'12/06/2020'),
+ (2010,'bujía', 'ER6523',9,36,'Pedro Montes',1243,'12/06/2020'),
+ (3578,'tijera', 'QW8523',1,128,'Pedro Faria',1456,'12/06/2020'),
+ (9251,'piñón', 'EN5698',2,8,'Juan Peña',565,'12/06/2020')]
+
+l2=[(5489,'tornillo', 'RS8512',2,33,'Julio Perez',3654213,'13/06/2020'),
+ (3215,'zocalo', 'UM8587',2,125,'Laura Macias',1256321,'13/06/2020'),
+ (3698,'biela', 'PT3218',1,78,'Luis Peña',14565487,'13/06/2020'),
+ (8795,'cilindro', 'AZ8794',2,96,'Carlos Casio',5612405,'13/06/2020')]
+
+l3=[(9852,'Culata', 'XC9875',2,165,'Luis Molero',3455846,'14/06/2020'),
+ (9852,'Culata', 'XC9875',2,165,'Jose Mejia',1355846,'14/06/2020'),
+ (2564,'Cárter', 'PT29872',2,32,'Peter Cerezo',8545436,'14/06/2020'),
+ (5412,'válvula', 'AZ8798',2,11,'Juan Peña',568975,'14/06/2020')]
+
+def AutoPartes(ventas):
+    dic={"l1": ventas}
+    print(dic)
+AutoPartes(l1) 
+
+'''
+def consultaRegistro(ventas, idProducto):
+    respuesta = ""
+    encontrado = False
+    for t in ventas: 
+        if t[0] == idProducto:
+            respuesta += f'Producto consultado : {idProducto} Descripción {t[1]} #Parte {t[2]} Cantidad vendida {t[3]} Stock {t[4]} Comprador {t[5]} Documento {t[6]} Fecha Venta {t[7]}\n\n'
+            encontrado = True
+    if encontrado == True:
+        return respuesta
+    else: 
+        return 'No hay registro de venta de ese producto'
+
+print(consultaRegistro(l1,201054654156)) 
+'''
+ 
+
+
+
+
+
+ 
+    
 
